@@ -1,1 +1,6 @@
-/pedro  /admin
+/admin              /admin
+/blog/my-post.php  /blog/my-post
+/news              /blog
+/cuties            https://www.petsofnetlify.com
+/settings         /settings
+/home             /
