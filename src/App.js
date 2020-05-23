@@ -22,8 +22,8 @@ const App = (props) => {
             <Switch>
           
                         <Route exact path="/" component={Login} />
-                        <Route exact path="/admin" component={Admin} />
-                        <Route exact path="/settings" component={Settings} />
+                        <Route  path="/admin" component={Admin} />
+                        <Route  path="/settings" component={Settings} />
         
             </Switch>
             </CookiesProvider>
