@@ -6,20 +6,16 @@ import Admin from './shamanic/admin/contacts/contacts'
 import Settings from './shamanic/admin/settings/settings'
 import Login from './shamanic/components/login/login'
 import store from './store'
+import { withRouter,Redirect } from "react-router-dom"
+
 import { CookiesProvider } from 'react-cookie';
 //2215269076d9e1c7e9d7431d14a8086062fb1c1c
 
 
-if(localStorage.getItem('url')==='garcia'){
-    console.log('garcia')
-}
 
-if(localStorage.getItem('url')==='rojas'){
-    console.log('rojas')
-}
+const App = (props) => {
+    
 
-const App = () => {
-       
       return (  <BrowserRouter>
          <Provider store={store}>
          <CookiesProvider>
@@ -38,4 +34,4 @@ const App = () => {
 
 
 }
-export default App
+export default withRouter(App)
