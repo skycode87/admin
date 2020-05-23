@@ -10,7 +10,6 @@ import { CookiesProvider } from 'react-cookie';
 //2215269076d9e1c7e9d7431d14a8086062fb1c1c
 
 
-alert('ok')
 
 
 const App = () => {
