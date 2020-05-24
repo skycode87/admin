@@ -7,6 +7,8 @@ import cellEditFactory,{Type} from 'react-bootstrap-table2-editor';
 import SaveFirebase from '../../components/firebase/save'
 
 
+
+
 const { SearchBar } = Search;
 
 const products = [{
@@ -39,9 +41,18 @@ let columns = [{
 }, {
   dataField: 'email',
   text: 'Email', 
+  editable:false,
   editor: {
     type:  Type.TEXT
  }
+}, {
+  dataField: 'date2',
+  text: 'Created At',
+  editable:false,
+}, {
+  dataField: 'lead2',
+  text: 'Lead Date',
+  editable:false,
 }];
 
 
@@ -113,7 +124,6 @@ class SelectionManagment extends React.Component {
       };
       return (
         <div>
-          <button className="btn btn-success" onClick={ this.handleBtnClick }>Select/UnSelect 3rd row</button>
           <ToolkitProvider
   keyField="id"
   data={ data }
@@ -123,7 +133,8 @@ class SelectionManagment extends React.Component {
   {
     props => (
       <div>
-        <p>Input something at below input field:</p>
+      {/* <button className="btn btn-success" onClick={ this.handleBtnClick }>Select/UnSelect 3rd row</button>
+        <p>Input something at below input field:</p> */}
         <SearchBar { ...props.searchProps } />
         <hr />
         <BootstrapTable  keyField="id" data={ data  } columns={ columns } selectRow={ selectRow } 

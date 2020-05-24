@@ -2,13 +2,12 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import { db } from "../../../firebase"
 import Table from "./tableSettings"
+import Navegador from '../nav/nav'
 
 function Settings(){
 
-
     const [tareas,setTareas] = React.useState([])
     const [active,setActive] = React.useState(false)
-
 
     React.useEffect(() => {
 
@@ -36,9 +35,11 @@ function Settings(){
         },[])
 
             if( active ) return (
+                <React.Fragment>
+                <Navegador />
             <Container>
                 <Table tareas={tareas}  />
-            </Container>)
+            </Container> </React.Fragment>)
             else return ''
 
 

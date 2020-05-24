@@ -1,15 +1,34 @@
 import React from 'react'
-import { auth,db } from "../../../firebase"
+import { auth,db,fire } from "../../../firebase"
 import { withRouter } from 'react-router-dom'
+
+
 
 const Login = (props) => {
 
+
+   
+
+    React.useEffect(() => {
+
+        fire.auth().onAuthStateChanged(function(user) {
+            if (user) {
+             
+                props.history.push('/admin')
+
+            } else {
+               
+
+            }
+          });
+      
+        },[props])
+
     const [error,setError] = React.useState('')
-
     const procesarDatos = e => {
-
+        
         e.preventDefault()
-    
+        
         if(!email.trim()){
             setError('Ingrese Email')
             return
@@ -38,31 +57,25 @@ const Login = (props) => {
     
     }
 
-
-
-
     const [ esRegistro,setEsRegistro ] = React.useState('')
     const [ email,setEmail ] = React.useState('')
     const [ pass,setPass ] = React.useState('')
 
-
-
     const Login = React.useCallback( async () => {
-
         try {
-
-           const resp =  await auth.signInWithEmailAndPassword(email,pass)
+           
+            const resp =  await auth.signInWithEmailAndPassword(email,pass)
            setEmail('')
            setPass('')
            setError(null)
-           props.history.push('/admin')
-            
 
+           console.log(auth.currentUser)
+
+          // props.history.push('/admin')
+        
         } catch (error) {
             setError(error.message)  
         }
-
-
     },[email,pass] )
 
 
