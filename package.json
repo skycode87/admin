@@ -18,7 +18,7 @@
     "firebase": "^7.14.3",
     "history": "^4.10.1",
     "moment": "^2.26.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nuka-carousel": "^4.6.7",
     "query-string": "^6.12.1",
     "react": "^16.13.1",
